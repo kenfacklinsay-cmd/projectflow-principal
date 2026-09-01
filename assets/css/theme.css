@@ -1,0 +1,240 @@
+
+/* =========================================================
+   PROJECTFLOW - SYSTEME DE THEME
+   Clair / Sombre
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   THEME CLAIR - THEME PAR DEFAUT
+   --------------------------------------------------------- */
+
+:root {
+    --theme-background: #f5f7fb;
+    --theme-surface: #ffffff;
+    --theme-surface-secondary: #f8fafc;
+
+    --theme-text: #1f2937;
+    --theme-text-secondary: #6b7280;
+
+    --theme-border: #e5e7eb;
+
+    --theme-input-background: #ffffff;
+    --theme-input-text: #1f2937;
+
+    --theme-hover: #f3f4f6;
+
+    --theme-shadow: rgba(0, 0, 0, 0.08);
+
+    --theme-primary: #4f46e5;
+    --theme-primary-hover: #4338ca;
+}
+
+
+/* ---------------------------------------------------------
+   THEME SOMBRE
+   --------------------------------------------------------- */
+
+html[data-theme="dark"] {
+    --theme-background: #111827;
+    --theme-surface: #1f2937;
+    --theme-surface-secondary: #172033;
+
+    --theme-text: #f9fafb;
+    --theme-text-secondary: #9ca3af;
+
+    --theme-border: #374151;
+
+    --theme-input-background: #111827;
+    --theme-input-text: #f9fafb;
+
+    --theme-hover: #374151;
+
+    --theme-shadow: rgba(0, 0, 0, 0.30);
+
+    --theme-primary: #6366f1;
+    --theme-primary-hover: #818cf8;
+}
+
+
+/* ---------------------------------------------------------
+   CORPS DE L'APPLICATION
+   --------------------------------------------------------- */
+
+html,
+body {
+    background-color: var(--theme-background);
+    color: var(--theme-text);
+}
+
+
+/* ---------------------------------------------------------
+   ELEMENTS GENERAUX
+   --------------------------------------------------------- */
+
+.card,
+.card-body,
+.dashboard-card,
+.stat-card,
+.modal-content,
+.dropdown-menu,
+.panel {
+    background-color: var(--theme-surface);
+    color: var(--theme-text);
+    border-color: var(--theme-border);
+}
+
+
+/* ---------------------------------------------------------
+   SIDEBAR
+   --------------------------------------------------------- */
+
+.sidebar {
+    background-color: var(--theme-surface);
+    color: var(--theme-text);
+    border-color: var(--theme-border);
+}
+
+.sidebar a {
+    color: var(--theme-text);
+}
+
+.sidebar a:hover {
+    background-color: var(--theme-hover);
+}
+
+
+/* ---------------------------------------------------------
+   HEADER / NAVBAR
+   --------------------------------------------------------- */
+
+.header,
+.navbar,
+.topbar {
+    background-color: var(--theme-surface);
+    color: var(--theme-text);
+    border-color: var(--theme-border);
+}
+
+
+/* ---------------------------------------------------------
+   TEXTES
+   --------------------------------------------------------- */
+
+.text-muted,
+.text-secondary {
+    color: var(--theme-text-secondary) !important;
+}
+
+
+/* ---------------------------------------------------------
+   FORMULAIRES
+   --------------------------------------------------------- */
+
+input,
+textarea,
+select {
+    background-color: var(--theme-input-background);
+    color: var(--theme-input-text);
+    border-color: var(--theme-border);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    background-color: var(--theme-input-background);
+    color: var(--theme-input-text);
+    border-color: var(--theme-primary);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--theme-text-secondary);
+}
+
+
+/* ---------------------------------------------------------
+   TABLEAUX
+   --------------------------------------------------------- */
+
+table {
+    color: var(--theme-text);
+}
+
+table th,
+table td {
+    border-color: var(--theme-border);
+}
+
+table tbody tr:hover {
+    background-color: var(--theme-hover);
+}
+
+
+/* ---------------------------------------------------------
+   BOUTONS DE CHOIX DU THEME
+   --------------------------------------------------------- */
+
+.theme-selector {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    border: 2px solid var(--theme-border);
+    border-radius: 10px;
+
+    background-color: var(--theme-surface);
+    color: var(--theme-text);
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: all 0.2s ease;
+}
+
+.theme-option:hover {
+    background-color: var(--theme-hover);
+    border-color: var(--theme-primary);
+}
+
+.theme-option.active {
+    background-color: var(--theme-primary);
+    border-color: var(--theme-primary);
+    color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   TRANSITION DU CHANGEMENT DE THEME
+   --------------------------------------------------------- */
+
+body,
+.card,
+.dashboard-card,
+.stat-card,
+.sidebar,
+.header,
+.navbar,
+.topbar,
+.modal-content,
+.dropdown-menu,
+input,
+textarea,
+select,
+table,
+.theme-option {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
